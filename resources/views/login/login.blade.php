@@ -12,7 +12,6 @@ Use it to add specific things that *this* View needs in the head,
 such as a page specific stylesheets.
 --}}
 @section('head')
-    <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
 @stop
 
 
@@ -21,7 +20,7 @@ such as a page specific stylesheets.
         <h1>Welcome to ChefMaster</h1>
 		<h2>Login</h2>
 		
-		<form method='POST' action='/project'>
+		<form method='POST' action='login'>
 		
 		
 
@@ -33,13 +32,12 @@ such as a page specific stylesheets.
 			</ul>
 			@endif
 			
-		<form method='POST' action='/project'>
 		
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 	
 
 
-		Email<br><input type="email" name="email" value="your email"><br>
+		Email<br><input type="email" name="email" value=""><br>
 		Password<br><input type="password" name="password" value=""><br>
 	
 	

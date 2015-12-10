@@ -27,7 +27,7 @@ class RegisterController extends Controller
      */
     public function postRegister()
     {
-        //
+        return "account created!";
     }
 }
     

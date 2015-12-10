@@ -18,11 +18,14 @@ Route::get('/', 'LandingController@getIndex');
 Route::get('/login', 'LoginController@getLogin');
 Route::post('/login', 'LoginController@postLogin');
 
-Route::get('/acct_info', 'AcctController@getAcct');
-Route::post('/acct_info', 'AcctController@postAcct');
-
 Route::get('/register', 'RegisterController@getRegister');
 Route::post('/register','RegisterController@postRegister');
 
+Route::get('/acct_info', 'AcctController@getAcct');
+Route::post('/acct_info', 'AcctController@postAcct');
+
 Route::get('/project', 'ProjectController@getProject');
 Route::post('/project', 'ProjectController@postProject');
+
+Route::get('/archive', 'ArchiveController@getProject');
+Route::post('/archive', 'ArchiveController@postProject');

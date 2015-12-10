@@ -12,7 +12,7 @@ Use it to add specific things that *this* View needs in the head,
 such as a page specific stylesheets.
 --}}
 @section('head')
-    <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
+    <link href="/css/master.css" type='text/css' rel='stylesheet'>
 @stop
 
 
@@ -21,7 +21,7 @@ such as a page specific stylesheets.
         <h1>Welcome to ChefMaster</h1>
 		<h2>Enter your account details, and we can get started</h2>
 		
-		<form method='POST' action='/acct_info'>
+		<form method='POST' action='/register'>
 		
 		
 
@@ -32,7 +32,6 @@ such as a page specific stylesheets.
 				@endforeach
 			</ul>
 			@endif
-		<form method='POST' action='/usergenerator'>
 		
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 	

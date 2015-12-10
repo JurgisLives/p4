@@ -4,6 +4,11 @@
 @section('title')
     ChefMaster 
 @stop
+
+@section('head')
+    <link href="css/master.css" type='text/css' rel='stylesheet'>
+@stop
+
 <h1>ChefMaster</h1>
 
 <h2>The free restaurant pro-forma budgeting tool.</h2>
