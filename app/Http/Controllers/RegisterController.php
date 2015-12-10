@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class LoginController extends Controller
+class RegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function getLogin()
+    public function getRegister()
     {
-        return view ('login.login');
-		//return "Login Here";
+		//return "Register Here";
+        return view('register.register');
     }
 
     /**
@@ -25,9 +25,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function postLogin()
+    public function postRegister()
     {
         //
     }
-
 }
+    

@@ -11,16 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LandingController@getIndex');
 
 
-Route::get('/login', 'LoginController@getIndex');
-Route::post('/login', 'LoginController@postIndex');
 
-Route::get('/acct_info', 'AcctController@getIndex');
-Route::post('/acct_info', 'AcctController@postIndex');
+Route::get('/login', 'LoginController@getLogin');
+Route::post('/login', 'LoginController@postLogin');
 
-Route::get('/project', 'AcctController@getIndex');
-Route::post('/project', 'AcctController@postIndex');
+Route::get('/acct_info', 'AcctController@getAcct');
+Route::post('/acct_info', 'AcctController@postAcct');
+
+Route::get('/register', 'RegisterController@getRegister');
+Route::post('/register','RegisterController@postRegister');
+
+Route::get('/project', 'ProjectController@getProject');
+Route::post('/project', 'ProjectController@postProject');
