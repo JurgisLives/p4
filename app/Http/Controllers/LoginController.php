@@ -25,9 +25,16 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function postLogin()
+    public function postLogin(Request $request)
     {
-        return "login successful";
+		// validate entry
+		$this -> 
+		validate($request, 
+		['email' => 'required',
+		 'password' => 'required'
+		]);
+		
+        return view ('acctinfo.acctview');
     }
 
 }

@@ -16,7 +16,7 @@ class AcctController extends Controller
      */
     public function getAcct()
     {
-        //
+        return view ('new_acct.acctview');
     }
 
     /**

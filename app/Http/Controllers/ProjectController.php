@@ -24,9 +24,21 @@ class ProjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function postProject()
+    public function postProject(Request $request)
     {
-        return "project created";
+		
+		// validate entry
+		$this -> 
+		validate($request, 
+		['name' => 'required|min:2',
+		 'zip_code' => 'required|min:5',
+		 'TL_Sales' => 'required',
+		]);
+		
+		// code here to enter info to database
+		
+		
+	return "project created:  ".$request->input('name');
     }
 
 }

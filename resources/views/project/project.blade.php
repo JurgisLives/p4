@@ -40,7 +40,7 @@ such as a page specific stylesheets.
 		
 		<br><fieldset>
 		<legend>Tell us a bit about "$name":</legend>
-		Is this "$name" currently in operation?<input type="text" name="password" value=""><br>
+		Is this "$name" currently in operation?<input type="text" name="op_bool" value=""><br>
 		What is your zipcode?<input type="number" name="zip_code" value=""><br>
 		What is your rent per month?<input type="text" name="password" value=""><br>
 		What are your average sales? <input type="number" name="TL_Sales" value="">per<input type="text" name="period" value=""><br>
