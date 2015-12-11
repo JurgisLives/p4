@@ -3,16 +3,16 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypesTable extends Migration
+class CreateGradesTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
- public function up() {
-//schema class helps with stuff.
-    Schema::create('types', function (Blueprint $table) {
+public function up() {
+
+    Schema::create('grades', function (Blueprint $table) {
 
         # Increments method will make a Primary, Auto-Incrementing field.
         # Most tables start off this way
@@ -23,10 +23,12 @@ class CreateTypesTable extends Migration
         $table->timestamps();
 
         # The rest of the fields...
-        $table->string('type');
-        $table->float('fc_adj');
-        $table->float('lc_adj');
-        $table->string('info_link');
+        $table->string('grade');
+        $table->integer('grade_code');
+        $table->float('fc_adjust');
+        $table->float('lc_adjust');
+        $table->double('opcost_adjust');		
+        $table->longText('info');
 
         # FYI: We're skipping the 'tags' field for now; more on that later.
 
@@ -40,6 +42,6 @@ class CreateTypesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('types');
+        Schema::drop('grades');
     }
 }
