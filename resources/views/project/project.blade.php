@@ -46,20 +46,15 @@ such as a page specific stylesheets.
 		What are your average sales? <input type="number" name="TL_Sales" value="">per<input type="text" name="period" value=""><br>
 		Overall what type of operation is "$name"?<input type="text" name="op_type" value=""><br>
 		What level of food quality do you aim for?<input type="text" name="food_quality" value=""><br>
-		Does your operation have tablecloths?<input type="text" name="password" value=""><br>
 		Do your cooks bring their own knives, or do you provide them?<input type="text" name="password" value=""><br>
 		Do you define yourself as a 'locally sourced' operation?<input type="text" name="password" value=""><br>
-		What percentage of your menu is starch-based (pasta, rice, mashed potato, etc)?<input type="text" name="password" value=""><br>
 		Is your operation vegetarian/vegan?<input type="text" name="password" value=""><br>
 		Are you associated with a hotel, mall, university or other institution?<input type="text" name="password" value=""><br>
-		How many cooks in your kitchen at one time (max)?<input type="number" name="cook_count" value=""><br>
-		How many waiters on your floor at one time (max)?<input type="text" name="password" value=""><br>
 		How many tables do you have?<input type="text" name="password" value=""><br>
 		What percentage of tables is on a patio?<input type="text" name="password" value=""><br>
 		Do you sell beer and wine?<input type="text" name="password" value=""><br>
 		Do you sell liquor?<input type="text" name="password" value=""><br>
-		Do you sell oysters on the half shell?<input type="text" name="password" value=""><br>
-		How many stars do you have on Yelp?<input type="text" name="password" value=""><br>
+		How many stars do you have (or want) on Yelp?<input type="text" name="password" value=""><br>
 		How many reviews do you have on Yelp?<input type="text" name="password" value=""><br>
 		How long have you been in operation?<input type="text" name="password" value=""><br>
 	</fieldset>
