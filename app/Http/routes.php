@@ -13,7 +13,8 @@
 
 Route::get('/', 'LandingController@getIndex');
 
-
+Route::get('/practice', 'P4Controller@getPractice');
+Route::post('/practice', 'P4Controller@postPractice');
 
 Route::get('/login', 'LoginController@getLogin');
 Route::post('/login', 'LoginController@postLogin');
@@ -21,8 +22,8 @@ Route::post('/login', 'LoginController@postLogin');
 Route::get('/register', 'RegisterController@getRegister');
 Route::post('/register','RegisterController@postRegister');
 
-Route::get('/acctinfo', 'AcctController@getAcct');
-Route::post('/acctinfo', 'AcctController@postAcct');
+Route::get('/acct', 'AcctController@getAcct');
+Route::post('/acct', 'AcctController@postAcct');
 
 Route::get('/project', 'ProjectController@getProject');
 Route::post('/project', 'ProjectController@postProject');

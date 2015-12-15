@@ -14,73 +14,73 @@ class P4Controller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+	 /**
+	 query responsibility
+	 
+	 
+	 */
+    public function getPractice()
     {
-        //
-    }
+		//this returns the collection
+	
+	$type = \App\Type::orderBy('id', 'DESC')->get();
+//now $type is the collection
+	$first = $type->first();
+	
+		dump ($type);
+		dump ($first);
+	}	
+
+	//we will use the following method, (then within page.page, pull out what we need from $types)
+	//return veiw (page.page)->with('types' as $types)
+		
+		function getUpdate()
+		{
+			$type = new \App\Type();
+			
+			$type_to_update = $type->find(4);
+			$type_to_update->type = "Pizza n' Subs";
+			
+			$type_to_update->save();
+			
+		}
+		function getAdd()
+		{
+			$type = new \App\Type();
+			
+			$type->type = 'Sushi';
+			$type->fc_adj = .07;
+			$type->lc_adj = -.10;
+			
+			$type->save();
+			
+			foreach ($type->all() as $type){
+				echo $type->type;
+				
+			}; 
+		}	
+		
+		
+	
+    /*READING operation with QueryBUILDER
+
+	$types = \DB::table('types')->get();
+	   
+	   foreach($types as $type)
+	   {
+		   echo $type->type.'<br>';
+	   }
+	}
+	To create rows use 'insert' insteat of 'get' (line 21)
+    */
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+	
+    public function postPractice()
     {
         //
     }

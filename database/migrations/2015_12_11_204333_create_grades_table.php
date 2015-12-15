@@ -25,9 +25,11 @@ public function up() {
         # The rest of the fields...
         $table->string('grade');
         $table->integer('grade_code');
-        $table->float('fc_adjust');
-        $table->float('lc_adjust');
-        $table->double('opcost_adjust');		
+        $table->float('fc_adj');
+        $table->float('lc_adj');
+		$table->double('qfac_adj');
+        $table->double('opcost_adj');
+
         $table->longText('info');
 
         # FYI: We're skipping the 'tags' field for now; more on that later.

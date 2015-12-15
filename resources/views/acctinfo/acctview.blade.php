@@ -34,14 +34,18 @@ such as a page specific stylesheets.
 		
 	
 
-		Your Last Login: 
-		Your Projects<br><input type="email" name="email" value=""><br>
-	
-	
-		<input type="submit" value="Login">
-			
-	
 		
+		Your Projects<br>
+			
+		@foreach($proformas as $proforma)
+		
+			<div>
+				<h2>{{ $proforma->name }}</h2>
+				{{ $proforma->name }}<br>
+			</div>
+			
+		@endforeach;
+	
 		<a href="/project">Create New Project</a><br>
 
 

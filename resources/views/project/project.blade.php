@@ -36,7 +36,7 @@ such as a page specific stylesheets.
 				
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 	
-		Project Name<br><input type="text" name="name" value=""><br>
+		Project Name<br><input type="text" id='name' name="name" value="{{old('name', 'Your Project')}}"><br>
 		
 		<br><fieldset>
 		<legend>Tell us a bit about "$name":</legend>

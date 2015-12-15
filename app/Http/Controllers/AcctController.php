@@ -16,7 +16,10 @@ class AcctController extends Controller
      */
     public function getAcct()
     {
-        return view ('new_acct.acctview');
+		$proformas = \App\Proforma::orderBy('id','ASC')->get();
+		//dump($proformas->ToArray());
+		
+        return view ('acctinfo.acctview')->with('proformas', $proformas);
     }
 
     /**

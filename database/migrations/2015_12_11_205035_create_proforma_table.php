@@ -29,10 +29,15 @@ class CreateProformaTable extends Migration
         $table->float('bev_sales');
         $table->float('tl_sales');
         $table->float('fc_perc');
+		$table->float('fc_doll');
         $table->float('bc_perc');
+		$table->float('bc_doll');
 		$table->float('lc_perc');
+		$table->float('lc_doll');
+		$table->float('qfac_perc');
+		$table->float('qfac_doll');		
         $table->float('tot_vcost');
-		$table->float('cont_marg');
+		$table->float('tot_vcost_perc');
         $table->integer('rent');
         $table->float('other_fx_cost');
         $table->float('g_a');
@@ -42,7 +47,7 @@ class CreateProformaTable extends Migration
 		$table->float('tot_prof');
         $table->float('bep_doll');
 		$table->integer('avg_check');
-        $table->string('bev_cov');
+        $table->string('bep_cov');
    
         # FYI: We're skipping the 'tags' field for now; more on that later.
 
