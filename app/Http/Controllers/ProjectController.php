@@ -32,23 +32,27 @@ class ProjectController extends Controller
 		validate($request, 
 		['name' => 'required|min:2',
 		 'zip_code' => 'required|min:5',
-		 'TL_Sales' => 'required',
+		 'rent' => 'required',
+		 'op_type' => 'required',
+		 'grade' => 'required',
+		 'beer' => 'required',
+		 'booze' => 'required',
 		]);
 		
 		// code here to enter info to database
-		/**
-		$proforma= new /App/Proforma();
-		$proforma->type = $request->name;
-		$proforma->type = $request->fc_adj; <-this has to correspond with the "name= '  '" in the forms.
-		$type->type = $request->title;
+				
+				//$proforma= new \App\Proforma();
+
+				//$proforma->proj_name = $request->name;
+				//$proforma->type = $request->fc_adj; <-this has to correspond with the "name= '  '" in the forms.
+				//$proforma->type = $request->title;
+				
+				//$proforma->save();
+			
+		\Session::flash('flash_message','proforma created!');
 		
-		$type->save();
+        return view ('acctinfo.acctview')->with('proformas', $proformas);
 		
-		\Session::flash('flash_message','proforma created!'
-		)
-		return redirect('/project)->
-		*/
-	return "project created:  ".$request->input('name');
     }
 
 }

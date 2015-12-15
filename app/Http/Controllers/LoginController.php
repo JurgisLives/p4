@@ -33,6 +33,8 @@ class LoginController extends Controller
 		['email' => 'required',
 		 'password' => 'required'
 		]);
+			
+		\Session::flash('flash_message','proforma created!');
 		
         return view ('acctinfo.acctview');
     }

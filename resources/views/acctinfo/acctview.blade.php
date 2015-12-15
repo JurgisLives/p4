@@ -32,7 +32,6 @@ such as a page specific stylesheets.
 			@endif
 			
 		
-	
 
 		
 		Your Projects<br>
@@ -41,7 +40,7 @@ such as a page specific stylesheets.
 		
 			<div>
 				<h2>{{ $proforma->name }}</h2>
-				{{ $proforma->name }}<br>
+				{{ $proforma->proj_name }}<br>
 			</div>
 			
 		@endforeach;

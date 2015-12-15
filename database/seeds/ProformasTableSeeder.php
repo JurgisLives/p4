@@ -13,7 +13,7 @@ class ProformasTableSeeder extends Seeder
 	public function run()
 	{
 		//for($i = 0, i < 100, i++){}
-		DB::table('grades')->insert([
+		DB::table('proformas')->insert([
 			'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
 			'proj_name' => "John Harvards",
@@ -30,15 +30,14 @@ class ProformasTableSeeder extends Seeder
 			'lc_doll'=> ('tl_sales' * 'qfac_perc'),
 			'tot_vcost' => ('fc_doll' + 'bc_doll' + 'lc_doll'),
 			'tot_vcost_perc'=>('tot_vcost' / 1),
-			'cont_marg'=> ('tl_sales' - 'tot_vcost'),
-			'rent'=> 4500,
-			'other_fx_cost' => 1350,
+			'rent'=> 0,
+			'other_fx_cost' => 0,
 			'g_a' => ('tl_sales' * .02),
 			'tot_fx_cost' => ('rent' + 'other_fx_cost' + 'g_a'),
 			'pretax_prof'=> ('tl_sales' - ('tot_vcost' + 'tot_fx_cost')),
 			'tax_rate'=> .33,
 			'tot_prof' => ('pretax_prof' - ('pretax_prof' * 'tax_rate')),
-			'bep_doll' => ('tot_fx_cost' / (1),
+			'bep_doll' => ('tot_fx_cost' / (1)),
 			'avg_check' => 35,
 			'bep_cov'=> ('bep_doll' / 1),
 		

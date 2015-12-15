@@ -24,7 +24,7 @@ class P4Controller extends Controller
 		//this returns the collection
 	
 	$type = \App\Type::orderBy('id', 'DESC')->get();
-//now $type is the collection
+//now $type is the collection, and we can work from within that, like so. 
 	$first = $type->first();
 	
 		dump ($type);
