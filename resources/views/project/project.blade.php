@@ -41,22 +41,15 @@ such as a page specific stylesheets.
 		<br><fieldset>
 		<legend>Tell us a bit about "$name":</legend>
 		Is this "$name" currently in operation?<input type="text" name="op_bool" value=""><br>
+		What are your average monthly food sales?<input type="number" name="food_sales" value=""><br>
+		What are your average monthly beverage sales?<input type="number" name="bev_sales" value=""><br>
+		What type of operation is this?<input type="text" name="op_type" value="{{old('op_type', 'Chinese'"><br>
 		What is your zipcode?<input type="number" name="zip_code" value="{{old('zip_code', '02141')}}"><br>
 		What is your rent per month?<input type="number" name="rent" value="{{old('rent', '1000')}}"><br>
-		What are your average sales? <input type="number" name="TL_Sales" value="{{old('TL_Sales', '10000')}}"><br>
 		Overall what type of operation is "$name"?<input type="text" name="op_type" value="{{old('name', 'Chinese')}}"><br>
 		What level of food quality do you aim for?<input type="text" name="grade" value="{{old('grade', '3')}}"><br>
-		Do your cooks bring their own knives, or do you provide them?<input type="text" name="password" value=""><br>
-		Do you define yourself as a 'locally sourced' operation?<input type="text" name="password" value=""><br>
-		Is your operation vegetarian/vegan?<input type="text" name="password" value=""><br>
-		Are you associated with a hotel, mall, university or other institution?<input type="text" name="password" value=""><br>
-		How many tables do you have?<input type="text" name="password" value=""><br>
-		What percentage of tables is on a patio?<input type="text" name="password" value=""><br>
 		Do you sell beer and wine?<input type="text" name="beer" value="{{old('beer', 'Yes')}}"><br>
 		Do you sell liquor?<input type="text" name="booze" value="{{old('booze', 'no')}}"><br>
-		How many stars do you have (or want) on Yelp?<input type="text" name="password" value=""><br>
-		How many reviews do you have on Yelp?<input type="text" name="password" value=""><br>
-		How long have you been in operation?<input type="text" name="password" value=""><br>
 	</fieldset>
 	
 		<input type="submit" value="Create Budget">

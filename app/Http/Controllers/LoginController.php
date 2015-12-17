@@ -27,6 +27,8 @@ class LoginController extends Controller
      */
     public function postLogin(Request $request)
     {
+		$proformas = \App\Proforma::orderBy('id','ASC')->get();
+
 		// validate entry
 		$this -> 
 			validate($request, 

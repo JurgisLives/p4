@@ -34,7 +34,7 @@ class CreateProformaTable extends Migration
 		$table->float('bc_doll');
 		$table->float('lc_perc');
 		$table->float('lc_doll');
-		$table->float('qfac_perc');
+        $table->integer('type_id');
 		$table->float('qfac_doll');		
         $table->float('tot_vcost');
 		$table->float('tot_vcost_perc');
@@ -48,6 +48,7 @@ class CreateProformaTable extends Migration
         $table->float('bep_doll');
 		$table->integer('avg_check');
         $table->string('bep_cov');
+		$table->integer('op_type');
    
         # FYI: We're skipping the 'tags' field for now; more on that later.
 

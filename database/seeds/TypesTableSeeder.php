@@ -23,7 +23,6 @@ public function run()
         'type' => 'Chinese',
         'fc_adj' => -.12,
         'lc_adj' => 0,
-        'info_link' => 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG',
     ]);
 	
     DB::table('types')->insert([
@@ -32,7 +31,6 @@ public function run()
         'type' => 'Mexican',
         'fc_adj' => -.18,
         'lc_adj' => .1,
-        'info_link' => 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG',
     ]);
 
     DB::table('types')->insert([
@@ -41,7 +39,6 @@ public function run()
         'type' => 'Burger Stand',
         'fc_adj' => .15,
         'lc_adj' => -.5,
-        'info_link' => 'http://img2.imagesbn.com/p/9780743273565_p0_v4_s114x166.JPG',
     ]);
 
 }

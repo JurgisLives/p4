@@ -16,7 +16,6 @@ class ProjectController extends Controller
      */
     public function getProject()
     {
-	
         return view ('project.project');
     }
 
@@ -45,15 +44,12 @@ class ProjectController extends Controller
 		$proforma= new \App\Proforma();
 
 		$proforma->proj_name = $request->name;
-		/**
-		Fill These in with the $proforma parameters using the above format
-		$proforma->proj_name = $request->name;
-		$proforma->proj_name = $request->name;
-		$proforma->proj_name = $request->name;
-		$proforma->proj_name = $request->name;
-		$proforma->proj_name = $request->name;
-		$proforma->proj_name = $request->name;
-		*/
+		$proforma->rent = $request->rent;
+		$proforma->TL_Sales = $request->TL_Sales;
+		$proforma->op_type = $request->op_type;
+		$proforma->grade = $request->grade;
+		$proforma->beer = $request->beer;
+		$proforma->booze = $request->booze;
 		
 		$proforma->save();
 			
@@ -87,15 +83,13 @@ class ProjectController extends Controller
 
 
 		$proforma->proj_name = $request->name;
-		/**
-		Fill These in with the $proforma parameters using the above format
-		$proforma->proj_name = $request->name;
-		$proforma->proj_name = $request->name;
-		$proforma->proj_name = $request->name;
-		$proforma->proj_name = $request->name;
-		$proforma->proj_name = $request->name;
-		$proforma->proj_name = $request->name;
-		*/
+		$proforma->rent = $request->rent;
+		$proforma->TL_Sales = $request->TL_Sales;
+		$proforma->op_type = $request->op_type;
+		$proforma->grade = $request->grade;
+		$proforma->beer = $request->beer;
+		$proforma->booze = $request->booze;
+
 
 		$proforma->save();
 

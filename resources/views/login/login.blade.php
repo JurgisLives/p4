@@ -38,7 +38,7 @@ such as a page specific stylesheets.
 
 
 		Email<br><input type="email" name="email" value="{{old('email', 'sample@sample.net')}}"><br>
-		Password<br><input type="password" name="password" value="{{old('password', '123456')}}"><br>
+		Password<br><input type="password" name="password" value="{{old('password', '01234')}}"><br>
 	
 	
 		<input type="submit" value="Login">

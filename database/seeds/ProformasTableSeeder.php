@@ -26,7 +26,6 @@ class ProformasTableSeeder extends Seeder
 			'bc_doll'=>  ('food_sales') * 'fc_perc',
 			'lc_perc' => .12,
 			'lc_doll'=> ('tl_sales' * 'lc_perc'),
-			'qfac_perc' => .03,
 			'lc_doll'=> ('tl_sales' * 'qfac_perc'),
 			'tot_vcost' => ('fc_doll' + 'bc_doll' + 'lc_doll'),
 			'tot_vcost_perc'=>('tot_vcost' / 1),

@@ -36,8 +36,8 @@ such as a page specific stylesheets.
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 	
 
-		Name<br><input type="text" name="name" value="{{old('name', 'user')}}"><br>
-		Email<br><input type="email" name="email" value="{old('email', 'sample@sample.net')}}"><br>
+		Name<br><input type="text" name="name" value="{{old('name', 'Sample')}}"><br>
+		Email<br><input type="email" name="email" value="{{old('email', 'sample@sample.net')}}"><br>
 		Password<br><input type="password" name="password" value="{{old('password', '01234')}}"><br>
 		Re-enter<br><input type="password" name="password_verify" value="{{old('password_verify', '01234')}}"><br>
 	
