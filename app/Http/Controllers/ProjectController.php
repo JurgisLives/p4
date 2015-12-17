@@ -16,6 +16,7 @@ class ProjectController extends Controller
      */
     public function getProject()
     {
+	
         return view ('project.project');
     }
 
@@ -40,19 +41,68 @@ class ProjectController extends Controller
 		]);
 		
 		// code here to enter info to database
-				
-				//$proforma= new \App\Proforma();
+		
+		$proforma= new \App\Proforma();
 
-				//$proforma->proj_name = $request->name;
-				//$proforma->type = $request->fc_adj; <-this has to correspond with the "name= '  '" in the forms.
-				//$proforma->type = $request->title;
-				
-				//$proforma->save();
+		$proforma->proj_name = $request->name;
+		/**
+		Fill These in with the $proforma parameters using the above format
+		$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		*/
+		
+		$proforma->save();
 			
 		\Session::flash('flash_message','proforma created!');
 		
-        return view ('acctinfo.acctview')->with('proformas', $proformas);
-		
+		return view ('project.project_generated');		
     }
+
+
+    public function getEdit($id = null)
+	{
+
+		$proforma = \App\Proforma::find($id);
+
+		return view ('project.project_edit')->with('proforma', $proforma);
+	}
+
+
+    public function postEdit()
+	{
+
+		//validation
+		$proforma = \App\Proforma::find($id);
+		
+		if(is_null($book))
+		{
+
+			\Session::flash('flash_message',"Sorry, I can't find that message");
+			return redirect('\acct');
+		}		
+
+
+		$proforma->proj_name = $request->name;
+		/**
+		Fill These in with the $proforma parameters using the above format
+		$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		*/
+
+		$proforma->save();
+
+		\Session::flash('flash_message','proforma edited!');
+
+
+		return redirect('/proformas/edit/'.$request->id);
+	}
 
 }

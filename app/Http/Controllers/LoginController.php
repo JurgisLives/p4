@@ -29,14 +29,15 @@ class LoginController extends Controller
     {
 		// validate entry
 		$this -> 
-		validate($request, 
-		['email' => 'required',
-		 'password' => 'required'
-		]);
-			
+			validate($request, 
+			['email' => 'required',
+			 'password' => 'required'
+			]);
+	
+
 		\Session::flash('flash_message','proforma created!');
 		
-        return view ('acctinfo.acctview');
+        return view ('acctinfo.acctview')->with('proformas', $proformas);
     }
 
 }

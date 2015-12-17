@@ -28,6 +28,10 @@ Route::post('/acct', 'AcctController@postAcct');
 Route::get('/project', 'ProjectController@getProject');
 Route::post('/project', 'ProjectController@postProject');
 
+Route::get('/project/edit/{id?}', 'ProjectController@getEdit');
+Route::post('/project/edit', 'ProjectController@postEdit');
+
+
 Route::get('/archive', 'ArchiveController@getProject');
 Route::post('/archive', 'ArchiveController@postProject');
 

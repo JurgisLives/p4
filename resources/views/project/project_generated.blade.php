@@ -2,7 +2,7 @@
 
 
 @section('title')
-    your account
+    ChefMaster Login 
 @stop
 
 
@@ -17,35 +17,14 @@ such as a page specific stylesheets.
 
 @section('content')
     
-        <h1>Welcome to Your Account</h1>
-		<h2>"#username"</h2>
+		<h2>Project "$name"</h2>
 		
-		
-		
+		<br><fieldset>
+		<legend>Here is your Project</legend>
+	</fieldset>
 
-			@if(count($errors) > 0)
-			<ul>
-				@foreach ($errors->all() as $error)
-					<li>{{ $error }}</li>
-				@endforeach
-			</ul>
-			@endif
-			
-		
-
-		
-		<h1>Your Projects</h1>
-			
-		@foreach($proformas as $proforma)
-		
-			<div>
-				<h3>{{ $proforma->proj_name }}</h3>
-			
-			</div>
-			
-		@endforeach;
-	
-		<a href="/project">Create New Project</a><br>
+		<a href="/project">Start Over</a><br>
+		<a href="/">Home</a>
 
 
 {{--
