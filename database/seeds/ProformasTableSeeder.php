@@ -15,7 +15,7 @@ class ProformasTableSeeder extends Seeder
 		//for($i = 0, i < 100, i++){}
 		DB::table('proformas')->insert([
 			'created_at' => Carbon\Carbon::now()->toDateTimeString(),
-			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+			'updated_at' => Carbon\Carbon::now()->toDateTimeString(),			
 			'proj_name' => "John Harvards",
 			'food_sales' => 30000,
 			'bev_sales' => 15000,

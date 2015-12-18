@@ -23,7 +23,6 @@ class CreateProformaTable extends Migration
         $table->timestamps();
 
         # The rest of the fields...
-		$table->integer('user_id');
         $table->string('proj_name');
         $table->float('food_sales');
         $table->float('bev_sales');
@@ -34,7 +33,6 @@ class CreateProformaTable extends Migration
 		$table->float('bc_doll');
 		$table->float('lc_perc');
 		$table->float('lc_doll');
-        $table->integer('type_id');
 		$table->float('qfac_doll');		
         $table->float('tot_vcost');
 		$table->float('tot_vcost_perc');
@@ -48,7 +46,10 @@ class CreateProformaTable extends Migration
         $table->float('bep_doll');
 		$table->integer('avg_check');
         $table->string('bep_cov');
-		$table->integer('op_type');
+		$table->integer('type_id')->unsigned()->nullable();
+		$table->foreign('type_id')->references('id')->on('types');
+		$table->integer('grade_id')->unsigned()->nullable();
+		$table->foreign('grade_id')->references('id')->on('grades');
    
         # FYI: We're skipping the 'tags' field for now; more on that later.
 

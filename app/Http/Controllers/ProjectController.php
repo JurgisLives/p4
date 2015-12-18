@@ -42,14 +42,17 @@ class ProjectController extends Controller
 		// code here to enter info to database
 		
 		$proforma= new \App\Proforma();
+		$grade= new\App\Grade();
+		$type= new\App\Type();
 
 		$proforma->proj_name = $request->name;
 		$proforma->rent = $request->rent;
-		$proforma->TL_Sales = $request->TL_Sales;
-		$proforma->op_type = $request->op_type;
-		$proforma->grade = $request->grade;
-		$proforma->beer = $request->beer;
-		$proforma->booze = $request->booze;
+		$proforma->food_sales = $request->food_sales;
+		$proforma->bev_sales = $request->bev_sales;
+		$type->type_id = $request->op_type;
+		$grade->grade = $request->grade;
+		$type->beer = $request->beer;
+		$type->booze = $request->booze;
 		
 		$proforma->save();
 			
@@ -61,10 +64,13 @@ class ProjectController extends Controller
 
     public function getEdit($id = null)
 	{
+		if($id !=null){
+			
+		$proforma= \App\Proforma::find($id);
+		$grade= \App\Grade::find($id);
 
-		$proforma = \App\Proforma::find($id);
-
-		return view ('project.project_edit')->with('proforma', $proforma);
+		return view ('project.project_edit')->with('proforma', $proforma)->with('grade' , $grade);
+		}
 	}
 
 
@@ -72,7 +78,9 @@ class ProjectController extends Controller
 	{
 
 		//validation
-		$proforma = \App\Proforma::find($id);
+		$grade= new\App\Grade();
+		$type= new\App\Type();
+		$proforma= new \App\Proforma();
 		
 		if(is_null($book))
 		{
@@ -84,11 +92,12 @@ class ProjectController extends Controller
 
 		$proforma->proj_name = $request->name;
 		$proforma->rent = $request->rent;
-		$proforma->TL_Sales = $request->TL_Sales;
-		$proforma->op_type = $request->op_type;
-		$proforma->grade = $request->grade;
-		$proforma->beer = $request->beer;
-		$proforma->booze = $request->booze;
+		$proforma->food_sales = $request->food_sales;
+		$proforma->bev_sales = $request->bev_sales;
+		$proforma->type_id = $request->op_type;
+		$grade->grade = $request->grade;
+		$type->beer = $request->beer;
+		$type->booze = $request->booze;
 
 
 		$proforma->save();

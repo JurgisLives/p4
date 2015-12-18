@@ -43,10 +43,9 @@ such as a page specific stylesheets.
 		Is this "$name" currently in operation?<input type="text" name="op_bool" value=""><br>
 		What are your average monthly food sales?<input type="number" name="food_sales" value=""><br>
 		What are your average monthly beverage sales?<input type="number" name="bev_sales" value=""><br>
-		What type of operation is this?<input type="text" name="op_type" value="{{old('op_type', 'Chinese'"><br>
+		What type of operation is this?<input type="text" name="op_type" value="{{old('op_type', 'Chinese')}}"><br>
 		What is your zipcode?<input type="number" name="zip_code" value="{{old('zip_code', '02141')}}"><br>
 		What is your rent per month?<input type="number" name="rent" value="{{old('rent', '1000')}}"><br>
-		Overall what type of operation is "$name"?<input type="text" name="op_type" value="{{old('name', 'Chinese')}}"><br>
 		What level of food quality do you aim for?<input type="text" name="grade" value="{{old('grade', '3')}}"><br>
 		Do you sell beer and wine?<input type="text" name="beer" value="{{old('beer', 'Yes')}}"><br>
 		Do you sell liquor?<input type="text" name="booze" value="{{old('booze', 'no')}}"><br>
@@ -58,7 +57,7 @@ such as a page specific stylesheets.
 	
 		
 		<a href="/project">Start Over</a><br>
-		<a href="/">Home</a>
+		<a href="/acct">Go to my account</a><br>
 
 
 {{--

@@ -45,19 +45,17 @@ such as a page specific stylesheets.
 		What type of operation is this?<input type="text" name="op_type" value="{{$proforma->op_type}}"><br>
 		What is your zipcode?<input type="number" name="zip_code" value="{{$proforma->zip_code}}"><br>
 		What is your rent per month?<input type="number" name="rent" value="{{$proforma->rent}}"><br>
-		Overall what type of operation is "$name"?<input type="text" name="op_type" value="{{$proforma->op_type}}"><br>
-		What level of food quality do you aim for?<input type="text" name="grade" value="{{$proforma->grade}}"><br>
-		Do you sell beer and wine?<input type="text" name="beer" value="{{$proforma->beer}}"><br>
-		Do you sell liquor?<input type="text" name="booze" value="{{$proforma->booze}}"><br>
+		What level of food quality do you aim for?<input type="number" name="grade" value="{{$grade->grade}}"><br>
+		Do you sell beer and wine?<input type="text" name="beer" value="{{old('beer', 'Yes')}}"><br>
+		Do you sell liquor?<input type="text" name="booze" value="{{old('booze', 'Yes')}}"><br>
 	</fieldset>
 
 		<input type="submit" value="Change Project">
 			
 		</form>
 	
-		
+		<a href="/acct">Go to my account</a><br>
 		<a href="/project">Start Over</a><br>
-		<a href="/">Home</a>
 
 
 {{--

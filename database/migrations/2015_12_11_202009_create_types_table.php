@@ -25,8 +25,11 @@ class CreateTypesTable extends Migration
         # The rest of the fields...
         $table->string('type');
         $table->float('fc_adj');
+        $table->float('qfac_adj');
         $table->float('lc_adj');
-        $table->string('info_link');
+        $table->boolean('beer');
+        $table->boolean('booze');
+
 
         # FYI: We're skipping the 'tags' field for now; more on that later.
 

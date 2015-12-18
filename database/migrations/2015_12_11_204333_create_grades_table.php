@@ -23,8 +23,7 @@ public function up() {
         $table->timestamps();
 
         # The rest of the fields...
-        $table->string('grade');
-        $table->integer('grade_code');
+        $table->integer('grade');
         $table->float('fc_adj');
         $table->float('lc_adj');
 		$table->double('qfac_adj');
