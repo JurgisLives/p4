@@ -24,7 +24,7 @@ such as a page specific stylesheets.
 	</fieldset>
 
 		<a href="/project">Start Over</a><br>
-		<a href="/">Home</a>
+		<a href="/acct">Back to acct</a>
 
 
 {{--

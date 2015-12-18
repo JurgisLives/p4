@@ -41,7 +41,7 @@ such as a page specific stylesheets.
 			<div>
 				<h3>{{ $proforma->proj_name }}</h3>
 			<a href="/project/edit/{{$proforma->id}}">edit</a>
-			<a href="/project/drop/">delete</a>
+			<a href="/project/delete/(($proforma->id}}">delete</a>
 			</div>
 			
 		@endforeach

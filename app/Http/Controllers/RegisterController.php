@@ -19,7 +19,7 @@ class RegisterController extends Controller
 		$proformas = \App\Proforma::orderBy('id','ASC')->get();
 
 		//return "Register Here";
-        return view('register.register')->with;
+        return view('register.register');
     }
 
     /**
@@ -29,6 +29,8 @@ class RegisterController extends Controller
      */
     public function postRegister()
     {
+		$proformas = \App\Proforma::orderBy('id','ASC')->get();
+
         return view ('acctinfo.acctview')->with('proformas', $proformas);
 	}
 

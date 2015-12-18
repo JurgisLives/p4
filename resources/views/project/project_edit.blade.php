@@ -34,20 +34,27 @@ such as a page specific stylesheets.
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 		<input type="hidden" name="id" value="{{ $proforma->id }}">
 	
-		<h1>EDIT YOUR PROJECT</h1>
+		<h1>EDIT</h1>
 		Project Name<br><input type="text" id='name' name="name" value="{{$proforma->proj_name}}"><br>
 		
-			<br><fieldset>
-		<legend>Tell us a bit about "$name":</legend>
-		Is this "$name" currently in operation?<input type="text" name="op_bool" value=""><br>
-		What are your average monthly food sales?<input type="number" name="food_sales" value="{{$proforma->food_sales}}"><br>
-		What are your average monthly beverage sales?<input type="number" name="bev_sales" value="{{$proforma->bev_sales}}"><br>
-		What type of operation is this?<input type="text" name="op_type" value="{{$proforma->op_type}}"><br>
-		What is your zipcode?<input type="number" name="zip_code" value="{{$proforma->zip_code}}"><br>
-		What is your rent per month?<input type="number" name="rent" value="{{$proforma->rent}}"><br>
-		What level of food quality do you aim for?<input type="number" name="grade" value="{{$grade->grade}}"><br>
+		<br><fieldset>
+		<legend>Change your Project:</legend>
+		What are your average monthly food sales?<input type="number" name="food_sales" value=""><br>
+		What are your average monthly beverage sales?<input type="number" name="bev_sales" value=""><br>
+		<label for='type'>*What type of operation is this?</label>
+		<select name='op_type' id='type'>
+
+		@foreach($types_for_dropdown as $type_id => $type_name)
+			<option value='{{$type_id}}'> {{$type_name}}</option>
+		@endforeach
+
+</select><br>
+		What is your rent per month?<input type="number" name="rent" value="{{old('rent', '1000')}}"><br>
+		What are your other fixed costs (total)<input type="number" name="other_fx_cost" value="{{old('other_fx_cost', '5500')}}"><br>
 		Do you sell beer and wine?<input type="text" name="beer" value="{{old('beer', 'Yes')}}"><br>
-		Do you sell liquor?<input type="text" name="booze" value="{{old('booze', 'Yes')}}"><br>
+		Do you sell liquor?<input type="text" name="booze" value="{{old('booze', 'no')}}"><br>
+		What is your tax rate?<input type="number" name="tax_rate" value="{{old('tax_rate', '.33')}}"><br>
+		What is your average check?<input type="number" name="avg_check" value="{{old('avg_check', '14.50')}}"><br>
 	</fieldset>
 
 		<input type="submit" value="Change Project">

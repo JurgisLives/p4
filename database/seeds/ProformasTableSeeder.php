@@ -20,13 +20,10 @@ class ProformasTableSeeder extends Seeder
 			'food_sales' => 30000,
 			'bev_sales' => 15000,
 			'tl_sales'=> ('food_sales' + 'bev_sales'),
-			'fc_perc'=> .295,
 			'fc_doll'=> ('food_sales') * ('fc_perc'),
-			'bc_perc' => .125,
-			'bc_doll'=>  ('food_sales') * 'fc_perc',
-			'lc_perc' => .12,
+			'bc_doll'=>  ('bev_sales' * 'bc_perc'),
 			'lc_doll'=> ('tl_sales' * 'lc_perc'),
-			'lc_doll'=> ('tl_sales' * 'qfac_perc'),
+			'qfac_doll'=> ('tl_sales' * 'qfac_perc'),
 			'tot_vcost' => ('fc_doll' + 'bc_doll' + 'lc_doll'),
 			'tot_vcost_perc'=>('tot_vcost' / 1),
 			'rent'=> 0,
@@ -43,3 +40,4 @@ class ProformasTableSeeder extends Seeder
 		]);
 	}
 }
+   

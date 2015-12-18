@@ -37,18 +37,28 @@ such as a page specific stylesheets.
 		<input type="hidden" name="_token" value="{{csrf_token()}}">
 	
 		Project Name<br><input type="text" id='name' name="name" value="{{old('name', 'Your Project')}}"><br>
-		
+			
 		<br><fieldset>
-		<legend>Tell us a bit about "$name":</legend>
-		Is this "$name" currently in operation?<input type="text" name="op_bool" value=""><br>
-		What are your average monthly food sales?<input type="number" name="food_sales" value=""><br>
-		What are your average monthly beverage sales?<input type="number" name="bev_sales" value=""><br>
-		What type of operation is this?<input type="text" name="op_type" value="{{old('op_type', 'Chinese')}}"><br>
-		What is your zipcode?<input type="number" name="zip_code" value="{{old('zip_code', '02141')}}"><br>
+		<legend>Change your Project:</legend>
+		What are your average monthly food sales?<input type="number" name="food_sales" value="10000"><br>
+		What are your average monthly beverage sales?<input type="number" name="bev_sales" value="5000"><br>
+		What type of operation is this?<select name='op_type'>
+  <option value="1">Quick Service</option>
+  <option value="2">Institutional Dining</option>
+  <option value="3">Neighborhood Casual</option>
+  <option value="4">Neighborhood Semi-Casual</option>
+  <option value="5">Neighborhood Fine Dining</option>
+  <option value="6">High Volume Casual</option>
+  <option value="7">High Volume Semi-Casual</option>
+  <option value="8">Destination Restaurant</option>
+  <option value="9">Formal Destination Restaurant</option>
+</select><br>
 		What is your rent per month?<input type="number" name="rent" value="{{old('rent', '1000')}}"><br>
-		What level of food quality do you aim for?<input type="text" name="grade" value="{{old('grade', '3')}}"><br>
+		What are your other fixed costs (total)<input type="number" name="other_fx_cost" value="{{old('other_fx_cost', '5500')}}"><br>
 		Do you sell beer and wine?<input type="text" name="beer" value="{{old('beer', 'Yes')}}"><br>
 		Do you sell liquor?<input type="text" name="booze" value="{{old('booze', 'no')}}"><br>
+		What is your tax rate?<input type="number" name="tax_rate" value="{{old('tax_rate', '.33')}}"><br>
+		What is your average check?<input type="number" name="avg_check" value="{{old('avg_check', '14.50')}}"><br>
 	</fieldset>
 	
 		<input type="submit" value="Create Budget">

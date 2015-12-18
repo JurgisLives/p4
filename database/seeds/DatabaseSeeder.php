@@ -14,10 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
 		$this->call(TypesTableSeeder::class);
-		$this->call(GradesTableSeeder::class);
-		//for ($i = 0, $i < 50, $i++){}
 		$this->call(ProformasTableSeeder::class);
 		
 

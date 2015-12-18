@@ -31,6 +31,8 @@ Route::post('/project', 'ProjectController@postProject');
 Route::get('/project/edit/{id?}', 'ProjectController@getEdit');
 Route::post('/project/edit', 'ProjectController@postEdit');
 
+Route::get('/project/delete/{id?}', 'ProjectController@getDelete');
+Route::post('/project/delete', 'ProjectController@postDelete');
 
 Route::get('/archive', 'ArchiveController@getProject');
 Route::post('/archive', 'ArchiveController@postProject');

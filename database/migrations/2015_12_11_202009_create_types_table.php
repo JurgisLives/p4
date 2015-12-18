@@ -7,8 +7,6 @@ class CreateTypesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
  public function up() {
 //schema class helps with stuff.
@@ -24,14 +22,12 @@ class CreateTypesTable extends Migration
 
         # The rest of the fields...
         $table->string('type');
-        $table->float('fc_adj');
-        $table->float('qfac_adj');
-        $table->float('lc_adj');
+        $table->float('fc_perc_t');		
+        $table->float('bc_perc_t');		
+        $table->float('qfac_perc_t');
+		$table->float('lc_perc_t');
         $table->boolean('beer');
         $table->boolean('booze');
-
-
-        # FYI: We're skipping the 'tags' field for now; more on that later.
 
     });
 }

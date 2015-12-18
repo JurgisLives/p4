@@ -6,13 +6,6 @@ class TypesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
-	    $table->string('type');
-        $table->float('fc_adj');
-        $table->float('lc_adjust');
-        $table->string('info_link');
-
      */
 public function run()
 {
@@ -20,26 +13,92 @@ public function run()
     DB::table('types')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-        'type' => 'Chinese',
-        'fc_adj' => -.12,
-        'lc_adj' => 0,
+        'type' => 'Quick Service',
+        'fc_perc_t' => .27,
+        'bc_perc_t' => .12,
+        'qfac_perc_t' => .01,
+        'lc_perc_t' => .11,
     ]);
 	
-    DB::table('types')->insert([
+	DB::table('types')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-        'type' => 'Mexican',
-        'fc_adj' => -.18,
-        'lc_adj' => .1,
+        'type' => 'Institutional',
+        'fc_perc_t' => .23,
+        'bc_perc_t' => .11,
+        'qfac_perc_t' => .017,
+        'lc_perc_t' => .07,
     ]);
-
-    DB::table('types')->insert([
+	
+	DB::table('types')->insert([
         'created_at' => Carbon\Carbon::now()->toDateTimeString(),
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-        'type' => 'Burger Stand',
-        'fc_adj' => .15,
-        'lc_adj' => -.5,
+        'type' => 'Neighborhood Casual',
+        'fc_perc_t' => .27,
+        'bc_perc_t' => .12,
+        'qfac_perc_t' => .01,
+        'lc_perc_t' => .11,
     ]);
+	
+	DB::table('types')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'type' => 'Neighborhood Semi-casual',
+        'fc_perc_t' => .27,
+        'bc_perc_t' => .12,
+        'qfac_perc_t' => .01,
+        'lc_perc_t' => .11,
+    ]);
+	
+	DB::table('types')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'type' => 'Neighborhood Fine Dining',
+        'fc_perc_t' => .27,
+        'bc_perc_t' => .12,
+        'qfac_perc_t' => .01,
+        'lc_perc_t' => .11,
+    ]);
+	
+	DB::table('types')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'type' => 'High Volume Casual',
+        'fc_perc_t' => .27,
+        'bc_perc_t' => .12,
+        'qfac_perc_t' => .01,
+        'lc_perc_t' => .11,
+    ]);
+	DB::table('types')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'type' => 'High Volume Semi-casual',
+        'fc_perc_t' => .27,
+        'bc_perc_t' => .12,
+        'qfac_perc_t' => .01,
+        'lc_perc_t' => .11,
+    ]);
+	DB::table('types')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'type' => 'Destination casual',
+        'fc_perc_t' => .27,
+        'bc_perc_t' => .12,
+        'qfac_perc_t' => .01,
+        'lc_perc_t' => .11,
+    ]);
+	DB::table('types')->insert([
+        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+        'type' => 'Destination Fine Dining',
+        'fc_perc_t' => .27,
+        'bc_perc_t' => .12,
+        'qfac_perc_t' => .01,
+        'lc_perc_t' => .11,
+    ]);
+	
+	
+	
+}
+}
 
-}
-}
