@@ -28,6 +28,17 @@ class AuthController extends Controller
      *
      * @return void
      */
+	 
+			 # Where should the user be redirected to if their login succeeds?
+		protected $redirectPath = '/acct';
+
+		# Where should the user be redirected to if their login fails?
+		protected $loginPath = '/login';
+
+		# Where should the user be redirected to after logging out?
+		protected $redirectAfterLogout = '/';
+		
+		
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);

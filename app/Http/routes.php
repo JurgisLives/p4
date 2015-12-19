@@ -16,12 +16,6 @@ Route::get('/', 'LandingController@getIndex');
 Route::get('/practice', 'P4Controller@getPractice');
 Route::post('/practice', 'P4Controller@postPractice');
 
-Route::get('/login', 'LoginController@getLogin');
-Route::post('/login', 'LoginController@postLogin');
-
-Route::get('/register', 'RegisterController@getRegister');
-Route::post('/register','RegisterController@postRegister');
-
 Route::get('/acct', 'AcctController@getAcct');
 Route::post('/acct', 'AcctController@postAcct');
 
@@ -41,7 +35,20 @@ Route::get('/archive', 'ArchiveController@getProject');
 Route::post('/archive', 'ArchiveController@postProject');
 
 
+# Show login form
+Route::get('/login', 'Auth\AuthController@getLogin');
 
+# Process login form
+Route::post('/login', 'Auth\AuthController@postLogin');
+
+# Process logout
+Route::get('/logout', 'Auth\AuthController@getLogout');
+
+# Show registration form
+Route::get('/register', 'Auth\AuthController@getRegister');
+
+# Process registration form
+Route::post('/register', 'Auth\AuthController@postRegister');
 
 
 Route::get('/debug', function() {
