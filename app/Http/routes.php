@@ -29,7 +29,7 @@ Route::get('/project', 'ProjectController@getProject');
 Route::post('/project', 'ProjectController@postProject');
 
 Route::get('/project/edit/{id?}', 'ProjectController@getEdit');
-Route::post('/project/edit', 'ProjectController@postEdit');
+Route::post('/project/edit/{id?}', 'ProjectController@postEdit');
 
 Route::get('/project/delete/{id?}', 'ProjectController@getDelete');
 Route::post('/project/delete', 'ProjectController@postDelete');

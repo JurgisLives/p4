@@ -62,23 +62,22 @@ class ProjectController extends Controller
     public function getEdit($id = null)
 	{
 	
-		$type= \App\Type::find($id);
 		$proforma= \App\Proforma::find($id);
 		
 		
 		if($id !=null){
-		return view ('project.project_edit')->with('proforma' , $proforma)->with('type' , $type);
+		return view ('project.project_edit')->with('proforma' , $proforma);
 		}
 	}
 
 
-    public function postEdit($id = null)
+    public function postEdit(Request $request, $id = null)
 	{
 
 		//validation
-		$type= new\App\Type();
+		$proformas = \App\Proforma::orderBy('id','ASC')->get();
 		$proforma= \App\Proforma::find($id);
-				
+		
 	/* 	$this -> 
 		validate($request, 
 		['name' => 'required|min:2',
@@ -87,11 +86,13 @@ class ProjectController extends Controller
 		]);
 		 */
 		
-		if(is_null($proforma))
+/* 		if(is_null($proforma))
 		 {
 
-			return redirect('\acct');
-		}		
+		 return redirect('\acct');
+		 
+		 } */
+				
 	
 		if($proforma) {
 

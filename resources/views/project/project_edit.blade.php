@@ -21,7 +21,7 @@ such as a page specific stylesheets.
 		
 		
 		
-		<form method='POST' action='/project/edit'>
+		<form method='POST' action='/project/edit/{{$proforma->id}}'>
 
 			@if(count($errors) > 0)
 			<ul>
@@ -41,7 +41,7 @@ such as a page specific stylesheets.
 		<legend>Change your Project:</legend>
 		What are your average monthly food sales?<input type="number" name="food_sales" value="{{$proforma->food_sales}}"><br>
 		What are your average monthly beverage sales?<input type="number" name="bev_sales" value="{{$proforma->bev_sales}}"><br>
-		What type of operation is this?<select name='op_type' value="{{$type->type}}">
+		What type of operation is this?<select name='op_type' value="{{$proforma->type}}">
 		  <option value="1">Quick Service</option>
 		  <option value="2">Institutional Dining</option>
 		  <option value="3">Neighborhood Casual</option>
