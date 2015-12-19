@@ -23,7 +23,6 @@ such as a page specific stylesheets.
 		
 	
 
-				// Output the results
 			<h4> Monthly Food Sales             ${{$proforma->food_sales}}</h4>
 			<h4> Monthly Beverage Sales         ${{$proforma->bev_sales}}</h4>
 			<h4> Monthly Rent                   ${{$proforma->rent}}</h4>
