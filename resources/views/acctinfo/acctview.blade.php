@@ -18,7 +18,6 @@ such as a page specific stylesheets.
 @section('content')
     
         <h1>Welcome to Your Account</h1>
-		<h2>"#username"</h2>
 		
 		
 		

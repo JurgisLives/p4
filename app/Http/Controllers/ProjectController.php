@@ -49,7 +49,8 @@ class ProjectController extends Controller
 		$proforma->rent = $request->rent;
 		$proforma->tax_rate = $request->tax_rate;
 		$proforma->avg_check = $request->avg_check;
-		
+
+		$proforma->tl_sales = $proforma->food_sales + $proforma->bev_sales;
 		//$proforma->type_id = $request->op_type;
 		
 		$proforma->save();
@@ -104,11 +105,13 @@ class ProjectController extends Controller
 		$proforma->rent = $request->rent;
 		$proforma->tax_rate = $request->tax_rate;
 		$proforma->avg_check = $request->avg_check;
+		
+		$proforma->tl_sales = $proforma->food_sales + $proforma->bev_sales;
 
-			# Save the changes
-			$proforma->save();
+		# Save the changes
+		$proforma->save();
 
-			echo "Update complete;";
+		echo "Update complete";
 		}
 
 	else{
