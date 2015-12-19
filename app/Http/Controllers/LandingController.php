@@ -16,12 +16,12 @@ class LandingController extends Controller
      */
     public function getIndex()
     {
-        //return "Show login screen";
+        // "Show login screen";
 		return view('landing.landing');
 	}
    public function postIndex()
     {
-        //return "process login credentials";
+        //send to login screen;
 		return view('login.login');
     }
     

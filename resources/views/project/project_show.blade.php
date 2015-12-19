@@ -25,11 +25,12 @@ such as a page specific stylesheets.
 
 			<h4> Monthly Food Sales             ${{$proforma->food_sales}}</h4>
 			<h4> Monthly Beverage Sales         ${{$proforma->bev_sales}}</h4>
+			<h4> Total Sales                    ${{$proforma->tl_sales}}</h4><br>
+
 			<h4> Monthly Rent                   ${{$proforma->rent}}</h4>
 			<h4> Other Fixed Costs              ${{$proforma->other_fx_cost}}</h4>
-			<h4> ${{$proforma->proj_name}}</h4>
-			<h4> ${{$proforma->proj_name}}</h4>
-			<h4> ${{$proforma->proj_name}}</h4>
+			<h4> Total Variable Costs           ${{$proforma->tot_v_costs}}</h4>
+			<h4> Break Even Point               ${{$proforma->bep_doll}}</h4>
 			
 			
 		

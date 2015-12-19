@@ -9,11 +9,7 @@ use App\Http\Controllers\Controller;
 
 class ProjectController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function getProject()
     {
 		$types= \App\Type::orderby('id','ASC')->get();
@@ -49,6 +45,11 @@ class ProjectController extends Controller
 		$proforma->rent = $request->rent;
 		$proforma->food_sales = $request->food_sales;
 		$proforma->bev_sales = $request->bev_sales;
+		$proforma->rent = $request->rent;
+		$proforma->rent = $request->rent;
+		$proforma->tax_rate = $request->tax_rate;
+		$proforma->avg_check = $request->avg_check;
+		
 		//$proforma->type_id = $request->op_type;
 		
 		$proforma->save();
@@ -76,26 +77,33 @@ class ProjectController extends Controller
 		$proformas = \App\Proforma::orderBy('id','ASC')->get();
 		$proforma= \App\Proforma::find($id);
 		
-	/* 	$this -> 
+	 	$this -> 
 		validate($request, 
 		['name' => 'required|min:2',
 		 'rent' => 'required',
 		 //'op_type' => 'required',
 		]);
-		 */
+		 
 		
-/* 		if(is_null($proforma))
+ 		if(is_null($proforma))
 		 {
 
-		 return redirect('\acct');
+			return redirect('\acct');
 		 
-		 } */
+		 } 
 				
 	
 		if($proforma) {
 
 			# Give it a different title
-			$proforma->proj_name = $request->name;
+		$proforma->proj_name = $request->name;
+		$proforma->rent = $request->rent;
+		$proforma->food_sales = $request->food_sales;
+		$proforma->bev_sales = $request->bev_sales;
+		$proforma->rent = $request->rent;
+		$proforma->rent = $request->rent;
+		$proforma->tax_rate = $request->tax_rate;
+		$proforma->avg_check = $request->avg_check;
 
 			# Save the changes
 			$proforma->save();
@@ -105,14 +113,16 @@ class ProjectController extends Controller
 
 	else{
 			echo "Project not found, can't edit.";
-		}
+	}
 
 			return view('project.project_generated')->with('proforma', $proforma);
 	
 
-	}	
+	}
+
 	
-public function getDelete($id = null)
+	//building the delete functionality, hard delete
+	public function getDelete($id = null)
 	{
 		$proformas = \App\Proforma::orderBy('id','ASC')->get();
 		$proforma= \App\Proforma::find($id);
@@ -127,14 +137,14 @@ public function getDelete($id = null)
 								
 				return view ('acctinfo.acctview')->with ('proformas' , $proformas);	
 	}
-	
-public function getShow($id=null)
-{
-		$proforma= \App\Proforma::find($id);
-		if($proforma){
-			
-			return view ('project.project_show')->with('proforma', $proforma);
-		}
-}
+		
+	public function getShow($id=null)
+	{
+			$proforma= \App\Proforma::find($id);
+			if($proforma){
+				
+				return view ('project.project_show')->with('proforma', $proforma);
+			}
+	}
 }
 
