@@ -16,14 +16,13 @@ such as a page specific stylesheets.
 
 
 @section('content')
-		<h2>{{$proforma->proj_name}}</h2>
+		<h2> {{$proforma->proj_name}}</h2>
 		
 		<br><fieldset>
 		<legend>Here is your Project</legend>
-		
+	
 	
 
-				// Output the results
 			<h4> Monthly Food Sales             ${{$proforma->food_sales}}</h4>
 			<h4> Monthly Beverage Sales         ${{$proforma->bev_sales}}</h4>
 			<h4> Monthly Rent                   ${{$proforma->rent}}</h4>
@@ -32,12 +31,14 @@ such as a page specific stylesheets.
 			<h4> ${{$proforma->proj_name}}</h4>
 			<h4> ${{$proforma->proj_name}}</h4>
 			
+			
+		
 		
 	</fieldset>
 
 		<a href="/project">Start Over</a><br>
-		<a href="/acct">Back to acct</a><br>
-		<a href="/project/edit/{{$proforma->id}}">edit</a><br>
+		<a href="/acct">Back to acct</a>
+		<a href="/project/edit/{{$proforma->id}}">edit</a>
 		<a href="/project/delete/{{$proforma->id}}">delete</a>
 
 {{--

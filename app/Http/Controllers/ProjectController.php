@@ -52,10 +52,8 @@ class ProjectController extends Controller
 		//$proforma->type_id = $request->op_type;
 		
 		$proforma->save();
-			
-		\Session::flash('flash_message','proforma created!');
-		
-		return view ('project.project_generated');		
+					
+		return view ('project.project_generated')->with('proforma', $proforma);		
     }
 
 
@@ -129,5 +127,14 @@ public function getDelete($id = null)
 								
 				return view ('acctinfo.acctview')->with ('proformas' , $proformas);	
 	}
+	
+public function getShow($id=null)
+{
+		$proforma= \App\Proforma::find($id);
+		if($proforma){
+			
+			return view ('project.project_show')->with('proforma', $proforma);
+		}
+}
 }
 
