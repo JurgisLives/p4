@@ -17,7 +17,7 @@ http://p4.jurgislives.me
 
 
 ## Screencast walkthrough can be found here:
-http://youtu.be/SbB5ktYyv_4?hd=1
+http://youtu.be/lQ2XQh6tJX0?hd=1
 
 ###This application is built on the Laravel 5 framework.
 
