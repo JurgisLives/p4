@@ -27,7 +27,19 @@
 		style='width:300px'
         alt='ChefMaster Logo'>
     </header>
-	
+			<nav>
+			<ul>
+				@if(Auth::check())
+					<li><a href='/'>Home</a></li>
+					<li><a href='/project'>Add a book</a></li>
+					<li><a href='/logout'>Log out</a></li>
+				@else
+					<li><a href='/'>Home</a></li>
+					<li><a href='/login'>Log in</a></li>
+					<li><a href='/register'>Register</a></li>
+				@endif
+			</ul>
+			</nav>
 	
 <body>
 
@@ -35,7 +47,8 @@
         {{-- Main page content will be yielded here --}}
         @yield('content')
     </section>
-
+	
+<a href="/logout">Logout</a>
     <footer>
         &copy; {{ date('Y') }} ChefMaster
     </footer>
