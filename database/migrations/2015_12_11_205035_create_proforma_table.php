@@ -45,7 +45,7 @@ class CreateProformaTable extends Migration
         $table->string('bep_cov');
     });
 			
-		Schema::table('proformas', function($table) {
+/* 		Schema::table('proformas', function($table) {
 			
 			$table->integer('type_id')->unsigned()->nullable();
 			$table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
@@ -62,7 +62,7 @@ class CreateProformaTable extends Migration
 			$table->float('qfac_perc')->unsigned()->nullable();
 			$table->foreign('qfac_perc')->references('qfac_perc_t')->on('types');
 
-		});
+		}); */
 
 }
 

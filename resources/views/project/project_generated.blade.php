@@ -21,6 +21,22 @@ such as a page specific stylesheets.
 		
 		<br><fieldset>
 		<legend>Here is your Project</legend>
+		<?php
+		$proformas = DB::table('proformas')->get();
+
+				// Output the results
+		foreach ($proformas as $proforma) {
+			echo $proforma->proj_name;
+			echo $proforma->food_sales;
+			echo $proforma->bev_sales;
+			echo $proforma->rent;
+			echo $proforma->other_fx_cost;
+			echo $proforma->proj_name;
+			echo $proforma->proj_name;
+			echo $proforma->proj_name;
+			
+		}
+		?>
 	</fieldset>
 
 		<a href="/project">Start Over</a><br>

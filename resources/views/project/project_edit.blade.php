@@ -39,22 +39,23 @@ such as a page specific stylesheets.
 		
 		<br><fieldset>
 		<legend>Change your Project:</legend>
-		What are your average monthly food sales?<input type="number" name="food_sales" value=""><br>
-		What are your average monthly beverage sales?<input type="number" name="bev_sales" value=""><br>
-		<label for='type'>*What type of operation is this?</label>
-		<select name='op_type' id='type'>
-
-		@foreach($types_for_dropdown as $type_id => $type_name)
-			<option value='{{$type_id}}'> {{$type_name}}</option>
-		@endforeach
-
-</select><br>
-		What is your rent per month?<input type="number" name="rent" value="{{old('rent', '1000')}}"><br>
-		What are your other fixed costs (total)<input type="number" name="other_fx_cost" value="{{old('other_fx_cost', '5500')}}"><br>
-		Do you sell beer and wine?<input type="text" name="beer" value="{{old('beer', 'Yes')}}"><br>
-		Do you sell liquor?<input type="text" name="booze" value="{{old('booze', 'no')}}"><br>
-		What is your tax rate?<input type="number" name="tax_rate" value="{{old('tax_rate', '.33')}}"><br>
-		What is your average check?<input type="number" name="avg_check" value="{{old('avg_check', '14.50')}}"><br>
+		What are your average monthly food sales?<input type="number" name="food_sales" value="{{$proforma->food_sales}}"><br>
+		What are your average monthly beverage sales?<input type="number" name="bev_sales" value="{{$proforma->bev_sales}}"><br>
+		What type of operation is this?<select name='op_type' value="{{$type->type}}">
+		  <option value="1">Quick Service</option>
+		  <option value="2">Institutional Dining</option>
+		  <option value="3">Neighborhood Casual</option>
+		  <option value="4">Neighborhood Semi-Casual</option>
+		  <option value="5">Neighborhood Fine Dining</option>
+		  <option value="6">High Volume Casual</option>
+		  <option value="7">High Volume Semi-Casual</option>
+		  <option value="8">Destination Restaurant</option>
+		  <option value="9">Formal Destination Restaurant</option>
+		</select><br>
+		What is your rent per month?<input type="number" name="rent" value="{{$proforma->rent}}"><br>
+		What are your other fixed costs (total)<input type="number" name="other_fx_cost" value="{{$proforma->other_fx_cost}}"><br>
+		What is your tax rate?<input type="number" name="tax_rate" value="{{$proforma->tax_rate}}"><br>
+		What is your average check?<input type="number" name="avg_check" value="{{$proforma->avg_check}}"><br>
 	</fieldset>
 
 		<input type="submit" value="Change Project">

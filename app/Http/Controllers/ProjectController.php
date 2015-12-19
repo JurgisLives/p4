@@ -20,13 +20,6 @@ class ProjectController extends Controller
 		
 		$proforma= new \App\Proforma();
 		
-		$types_for_dropdown = [];
-		
-		foreach($types as $type)
-		{
-			//$types_for_dropdown[$types->$id]= $type->type;
-		}
-		
         return view ('project.project')->with('proforma', $proforma);
     }
 
@@ -56,9 +49,7 @@ class ProjectController extends Controller
 		$proforma->rent = $request->rent;
 		$proforma->food_sales = $request->food_sales;
 		$proforma->bev_sales = $request->bev_sales;
-		$type->type_id = $request->op_type;
-		$type->beer = $request->beer;
-		$type->booze = $request->booze;
+		//$proforma->type_id = $request->op_type;
 		
 		$proforma->save();
 			
@@ -71,74 +62,71 @@ class ProjectController extends Controller
     public function getEdit($id = null)
 	{
 	
-		$types= \App\Type::find($id);	
 		$type= \App\Type::find($id);
 		$proforma= \App\Proforma::find($id);
 		
-		$types_for_dropdown = [];
-		
-		foreach ($types as $type){
-			$types_for_dropdown[$type->id]= $type->name;
-			
-		}
 		
 		if($id !=null){
-		return view ('project.project_edit')->with(['proforma'=>$proforma, 'types_for_dropdown' => $types_for_dropdown])->with('type' , $type);
+		return view ('project.project_edit')->with('proforma' , $proforma)->with('type' , $type);
 		}
 	}
 
 
-    public function postEdit(Request $request)
+    public function postEdit($id = null)
 	{
 
 		//validation
-		$grade= new\App\Grade();
 		$type= new\App\Type();
-		$proforma= new \App\Proforma();
+		$proforma= \App\Proforma::find($id);
 				
-		$this -> 
+	/* 	$this -> 
 		validate($request, 
 		['name' => 'required|min:2',
 		 'rent' => 'required',
 		 //'op_type' => 'required',
 		]);
-		
+		 */
 		
 		if(is_null($proforma))
-		{
+		 {
 
-			\Session::flash('flash_message',"Sorry, I can't find that project");
 			return redirect('\acct');
 		}		
-
-
-		$proforma->proj_name = $request->name;
-		$proforma->rent = $request->rent;
-		$proforma->food_sales = $request->food_sales;
-		$proforma->bev_sales = $request->bev_sales;
-		$type->id = $request->op_type;
-		$type->beer = $request->beer;
-		$type->booze = $request->booze;
-
-
-		$proforma->save();
-
-		\Session::flash('flash_message','proforma edited!');
-
-
-		return view('project.project_generated')->with('proforma', $proforma);
-	}
-
 	
+		if($proforma) {
+
+			# Give it a different title
+			$proforma->proj_name = $request->name;
+
+			# Save the changes
+			$proforma->save();
+
+			echo "Update complete;";
+		}
+
+	else{
+			echo "Project not found, can't edit.";
+		}
+
+			return view('project.project_generated')->with('proforma', $proforma);
 	
-    public function getDelete($id = null)
+
+	}	
+	
+public function getDelete($id = null)
 	{
-		$proforma= \App\Proforma::orderby('id', 'ASC')->get();
+		$proformas = \App\Proforma::orderBy('id','ASC')->get();
 		$proforma= \App\Proforma::find($id);
-		$proforma = DB::table('proformas')->where('id', '<', '5' )->first()->delete;				
-			
-	
-	return view ('acctinfo.acctview')->with('proforma', $proforma);
-	}
 
+
+			if($proforma) {
+
+				# Goodbye!
+				$proforma->delete();
+
+			}
+								
+				return view ('acctinfo.acctview')->with ('proformas' , $proformas);	
+	}
 }
+
