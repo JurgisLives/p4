@@ -1,26 +1,27 @@
-## Laravel PHP Framework
+## Chefmaster Proforma Budgeting Tool
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+ChefMaster is a web application that allows users to input their general accounting information each month, It will eventually have a lot more functionality, currently it just allows users to edit, view and delete their forms.
+*As of the 18th of December this application fulfilled most of the requirements of the assignment, User Authentication, CRuD operations, 2 database tables, etc. It is not pretty, and it was an arduous process getting this far, but I will continue to work on it until it is a viable and useful product. 
+*generate up to 100 paragraphs of dummy loremipsum text
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
+## Programmers Best Friend is built on the Laravel5 Framework
 
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contributing
+## Packages Used
+There were no external packages used, though I did use barryvdh's debugbar while in development. 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+##The live site can be visited at 
+http://p4.jurgislives.me
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+## Screencast walkthrough can be found here:
+http://youtu.be/SbB5ktYyv_4?hd=1
+
+###This application is built on the Laravel 5 framework.
+
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT) taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
 ### License
 
